@@ -9,23 +9,25 @@
 # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
 # version 2.0 for -> while
 
-# BLOQUE JUEGO 1 de 3: Inicializacion
-import random
+# 0 - BLOQUE PRESENTACION E INCIALIZACION DE JUEGO
+import random # incorpora funciones adicionales, en este caso de numero aleatorios
+# esta forma de importar mantiene los nuevos elementos seprados en una 'habitacion'
+# llamda random, para usarlos priemro tenemso que 'ir' a la hanitacion 'random'
 
-MAXAPUESTAS = 6 # Las constantyes se nombran en mayusculas por convencion
+MAXINTENTOS = 6 # Las constantes se nombran en mayusculas por convencion (PEP 8)
+print('¡Bienvenido el Juego de Adivina Numero - Completo v2.1')
+tuNombre = input('Hola! ¿Cuál es tu nombre?')
 
-print('Hola! ¿Cuál es tu nombre?')
-miNombre = input()
+numero = random.randint(1, 20) # funcion randint escoge un numero entero del 1 al 20
+print('Vale, ' + tuNombre + ', he pensado un numero del 1 al 20.')
 
-numero = random.randint(1, 20)
-print('Vale, ' + miNombre + ', he pensado un numero del 1 al 20.')
+intentos = 0
 
-# BLOQUE JUEGO 2 de 3: Bucle de juego
-apuestas = 0
-while apuestas < MAXAPUESTAS:
+# 1- BLOQUE JUEGO 2 de 3: Bucle de juego
+while intentos < MAXINTENTOS:
     numeroSupuesto = int(input('¡Intenta adivinarlo! Di un número ')) #cambio de tipo de cadena a entero
-    apuestas = apuestas + 1 # actualizo el numero de apuestas hechas
-    # apuestas += 1 # esta forma es mas 'pitonica'
+    intentos = intentos + 1 # actualizo el numero de apuestas hechas
+    # intentos += 1 # esta forma es mas 'pitonica'
 
     if numeroSupuesto < numero:
         print('Tu número esta demasiado bajo.') # 8 espacios antes de "print"
@@ -36,11 +38,11 @@ while apuestas < MAXAPUESTAS:
     if numeroSupuesto == numero:
         break # Sale de bucle for
 
-# BLOQUE JUEGO 3 de 3: Final Ganas / Fierdes
+# 2- BLOQUE JUEGO 3 de 3: Final Ganas / Fierdes
 if numeroSupuesto == numero:
-    print('Bien hecho, ' + miNombre + ' adivinaste mi mumero en ', apuestas, ' apuestas')
+    print('Bien hecho, ' + tuNombre + ' adivinaste mi mumero en ', intentos, ' intentos')
     print('El numero que habia pensado era ', numero)
 else:
-    print('No adivinaste mi numero en ', MAXAPUESTAS, ' intentos')
+    print('No adivinaste mi numero en ', MAXINTENTOS, ' intentos')
     print('El numero que habia pensado era ', numero)
     
