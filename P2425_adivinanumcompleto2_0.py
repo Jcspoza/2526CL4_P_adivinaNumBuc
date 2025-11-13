@@ -27,6 +27,7 @@ intentos = 0
 while intentos < MAXINTENTOS:
     numeroSupuesto = int(input('¡Intenta adivinarlo! Di un número ')) #cambio de tipo de cadena a entero
     intentos = intentos + 1 # actualizo el numero de apuestas hechas
+    # print(intentos)
     # intentos += 1 # esta forma es mas 'pitonica'
 
     if numeroSupuesto < numero:
@@ -36,7 +37,7 @@ while intentos < MAXINTENTOS:
         print('Tu número esta demasiado alto.')
 
     if numeroSupuesto == numero:
-        break # Sale de bucle for
+        break # Sale de bucle while
 
 # 2- BLOQUE JUEGO 3 de 3: Final Ganas / Fierdes
 if numeroSupuesto == numero:

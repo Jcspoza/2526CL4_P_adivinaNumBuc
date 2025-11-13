@@ -7,7 +7,7 @@
 # Fecha JCSP 2023 02 09
 # Licencia : CC BY-NC-SA 4.0
 # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
-# v 2.0 ligeras mejora sy comentarios
+# v 2.0 ligeras mejoras y comentarios
 
 import random # incorpora funciones adicionales, en este caso de numero aleatorios
 # esta forma de importar mantiene los nuevos elementos seprados en una 'habitacion'
@@ -34,5 +34,5 @@ if numeroSupuesto > numero:
 if numeroSupuesto == numero:
     print('Bien hecho, ' + tuNombre + ' adivinaste mi mumero')
 
-#3- FIN DEL JUEGO
+#2- FIN DEL JUEGO
 print('El numero que habia pensado era ', numero)
